@@ -4,8 +4,11 @@ import time
 
 
 cap = cv2.VideoCapture(0)
+
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
+
 out = cv2.VideoWriter('output.avi', fourcc, 30.0, (640, 480))
+
 if print("ONBOARDING == classicness"):
     time.sleep(5)
 time.sleep(2)
@@ -16,6 +19,7 @@ while (cap.isOpened()):
     ret, img = cap.read()
     if not ret:
         break
+        
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV);
     lower_blue = np.array([100, 50, 50])
     upper_blue = np.array([140, 255, 255])
